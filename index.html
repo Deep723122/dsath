@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRK Institute - College Fest</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* Loader */
+    #loader {
+      position: fixed;
+      z-index: 9999;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+    }
+
+    .spinner {
+      border: 8px solid rgba(255, 255, 255, 0.2);
+      border-top: 8px solid #00d2ff;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    .loader-text {
+      font-size: 1.5rem;
+      animation: fadeIn 1.5s ease-in-out infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0.4;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    body.loaded #loader {
+      display: none;
+    }
+
+    body:not(.loaded) main,
+    body:not(.loaded) footer {
+      display: none;
+    }
+
+    .college-header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .college-header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .location {
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .college-subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .qr-counter {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 500px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .qr-counter:hover {
+      transform: translateY(-5px);
+    }
+
+    #counter {
+      font-size: 3rem;
+      color: #2a9d8f;
+      margin: 10px 0 20px;
+    }
+
+    .qr-counter button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #e76f51;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .qr-counter button:hover {
+      background-color: #d65a3b;
+    }
+
+    section {
+      padding: 1.5rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .options-section {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .media-options-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .media-option {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      max-width: 350px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .media-option:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .media-icon {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .media-option h3 {
+      color: #1e3c72;
+      margin-bottom: 12px;
+    }
+
+    .media-option p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .media-btn {
+      background: #1e3c72;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .media-btn:hover {
+      background: #2a5298;
+    }
+
+    .arrow {
+      margin-left: 6px;
+    }
+
+    footer {
+      background-color: #1e3c72;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #a8d0e6;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 576px) {
+      .college-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .college-subtitle {
+        font-size: 1rem;
+      }
+
+      .media-option {
+        padding: 15px;
+      }
+    }
+    .college-subtitle2 {
+  color: rgb(248, 248, 248);
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #fff,
+    0 0 20px rgba(255, 255, 255, 0.5);
+  font-size: 16px; /* Adjust as needed */
+  font-weight: normal;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 15px #fff,
+      0 0 20px rgba(220, 220, 220, 0.5);
+  }
+  to {
+    text-shadow: 
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #fff,
+      0 0 40px rgba(220, 220, 220, 0.8);
+  }
+}
+  </style>
+</head>
+
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">🎉 Welcome to SRK College Fest</div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="college-header" data-aos="fade-down">
+      <h1>SRK INSTITUTE OF MANAGEMENT & COMPUTER APPLICATIONS</h1>
+      <div class="location">Sapeda</div>
+      <div class="college-subtitle">College Fest Celebration</div>
+      <br>
+      <div class="college-subtitle2">(CREATED BY : DEEP SATHAVARA & MEET PRAJAPATI)</div>
+    </div>
+
+
+    <!-- QR Counter -->
+    <div class="qr-counter" data-aos="zoom-in">
+      <h2>🚀 Visit Count!</h2>
+      <p>Total Scans:</p>
+      <div id="counter">Loading...</div>
+      <button onclick="resetCount()">🔄 Reset Count</button>
+    </div>
+
+    <!-- Media Sections -->
+    <section class="options-section" data-aos="zoom-in">
+      <div class="media-options-container">
+        <div class="media-option photo-option">
+          <div class="media-icon">📸</div>
+          <h3>Photo Gallery</h3>
+          <p>Relive the vibrant moments of our fest through stunning photographs</p>
+          <a href="photo.html" class="media-btn">click here <span class="arrow">→</span></a>
+        </div>
+        <div class="media-option video-option">
+          <div class="media-icon">🎥</div>
+          <h3>Video Collection</h3>
+          <p>Watch the highlights, performances and special moments from the fest</p>
+          <a href="videos.html" class="media-btn">click here <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SRK Institute of Management & Computer Application, Sapeda</p>
+    <p>Contact: info@srkinstitute.in | <a href="https://www.srkinstitute.in/" target="_blank">Main Website</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Init AOS
+    AOS.init({ duration: 1000, once: true });
+
+    // QR Counter
+    let count = localStorage.getItem("scanCount");
+    count = count ? parseInt(count) : 0;
+    count += 1;
+    localStorage.setItem("scanCount", count);
+    document.getElementById("counter").innerText = count;
+
+    function resetCount() {
+      localStorage.setItem("scanCount", 0);
+      document.getElementById("counter").innerText = 0;
+    }
+
+    // Loader Timeout
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.body.classList.add("loaded");
+      }, 500);
+    });
+  </script>
+</body>
+
+</html>

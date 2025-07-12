@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Festival & Day Celebration Videos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    body {
+      background-color: #e6eef5;
+      font-family: 'Segoe UI', sans-serif;
+      color: #003865;
+      margin: 0;
+      padding: 0;
+    }
+
+    .creator-credit {
+      background-color: #003865;
+      color: #ffffff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 500;
+      animation: fadeInSlide 1.5s ease-out forwards;
+      opacity: 0;
+      transform: translateY(-10px);
+      letter-spacing: 0.5px;
+    }
+
+    .creator-credit span {
+      color: #00ffc8;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 40px 15px 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #003865;
+    }
+
+    .video-category {
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+
+    .slider-container {
+      position: relative;
+      overflow-x: hidden;
+      padding: 0 50px;
+    }
+
+    .video-slider {
+      display: flex;
+      gap: 25px;
+      transition: transform 0.5s ease;
+      scroll-behavior: smooth;
+      overflow-x: auto;
+      padding-bottom: 35px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .video-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .video-box {
+      flex: 0 0 auto;
+      width: 350px;
+      min-width: 350px;
+      height: 620px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background: white;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-box:hover {
+      transform: scale(1.03);
+      z-index: 10;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 56, 101, 0.8);
+      color: #fff;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 20;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .slider-button:hover {
+      background: #003865;
+    }
+
+    .slider-button.prev {
+      left: 5px;
+    }
+
+    .slider-button.next {
+      right: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .video-box {
+        width: 300px;
+        min-width: 300px;
+        height: 550px;
+      }
+      
+      .slider-container {
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-box {
+        width: 280px;
+        min-width: 280px;
+        height: 520px;
+      }
+    }
+
+    footer {
+      background-color: #003865;
+      color: white;
+      padding: 20px 15px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ffc107;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Creator Credit Header -->
+  <div class="creator-credit" data-aos="fade-down">
+    ✨ Created by <span>Deep Sathwara</span> & <span>Meet Prajapati</span>
+  </div>
+
+  <h2 class="section-title" data-aos="fade-down">Festival & Day Celebration Videos</h2>
+
+  <div class="container-fluid">
+    <!-- Row 1 -->
+    <div class="video-category">
+      <div class="slider-container">
+        <button class="slider-button prev" onclick="slide(this, -1)">&#10094;</button>
+        <div class="video-slider">
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/12LHCdSbr5Q3LEs4IX3C6zYFDsDBCaY4q/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1L_KCF8voe3zeVPQsc_0Wc7HM3Uht5C4M/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1bu9rZ2CJ-HdNO20B52Fyujr7CWeGtZH0/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/10C0j3qdOBUb5VsGnoBlI3N15hqU2hbSc/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1hdR5ocYZ8e_FU5AHhfd5JJjHCNddxE-V/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <button class="slider-button next" onclick="slide(this, 1)">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="video-category">
+      <div class="slider-container">
+        <button class="slider-button prev" onclick="slide(this, -1)">&#10094;</button>
+        <div class="video-slider">
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1rUdqMrGhwzCq-OO02B5VGI4ziea5l2TJ/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1BzsKok2RZ9wkQbQvUWV-AJ79gw27fXaA/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1408CtBLzyaSPWYfv8axmKmcmmsiJIO_y/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1xluAH3ryFQR1PXRvZ9bljWoFLT3gQDrv/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <button class="slider-button next" onclick="slide(this, 1)">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="video-category">
+      <div class="slider-container">
+        <button class="slider-button prev" onclick="slide(this, -1)">&#10094;</button>
+        <div class="video-slider">
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1aqudKNcQT2SPy3vzCP4mNIc9e4PVQTAU/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1EBlcm95ImHiOerJ58kw0LLuG-lLkaljR/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="video-box" data-aos="zoom-in">
+            <iframe src="https://drive.google.com/file/d/1Q2QcQLg-ejx2tGZKr1D6NBy1S2H-ya14/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <button class="slider-button next" onclick="slide(this, 1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 SRK Institute of Management & Computer Application, Sapeda</p>
+      <p>Contact: info@srkinstitute.in | <a href="https://www.srkinstitute.in/" target="_blank">Main Website</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+
+    function slide(button, direction) {
+      const container = button.closest('.slider-container');
+      const slider = container.querySelector('.video-slider');
+      const cardWidth = slider.querySelector('.video-box').offsetWidth + 25;
+      slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

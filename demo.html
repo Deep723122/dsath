@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Festival Videos | SRK Institute</title>
+  <style>
+    :root {
+      --primary-color: #003865;
+      --accent-color: #00ffc8;
+    }
+    body {
+      background-color: #e6eef5;
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .header {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 1rem;
+    }
+    .header span {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+    .section-title {
+      text-align: center;
+      margin: 20px 10px;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+    .video-container {
+      padding: 0 10px;
+      margin-bottom: 30px;
+    }
+    .video-scroller {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px 5px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .video-scroller::-webkit-scrollbar {
+      display: none;
+    }
+    .video-card {
+      min-width: 280px;
+      height: 480px;
+      border-radius: 10px;
+      background: black;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .video-loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .video-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #ffc107;
+      text-decoration: none;
+    }
+    @media (min-width: 768px) {
+      .video-card {
+        min-width: 320px;
+        height: 550px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    ✨ Created by <span>Deep Sathwara</span> & <span>Meet Prajapati</span>
+  </div>
+
+  <h1 class="section-title">Festival & Day Celebration Videos</h1>
+
+  <!-- Video Row 1 -->
+  <div class="video-container">
+    <div class="video-scroller">
+      <!-- Video 1 -->
+      <div class="video-card">
+        <div class="video-loading">
+          <div class="spinner"></div>
+        </div>
+        <iframe class="video-iframe" 
+                src="https://drive.google.com/file/d/12LHCdSbr5Q3LEs4IX3C6zYFDsDBCaY4q/preview?autoplay=0&controls=1&modestbranding=1&rel=0&enablejsapi=1&playbackQuality=high" 
+                allow="autoplay; fullscreen" 
+                allowfullscreen
+                onload="this.parentNode.querySelector('.video-loading').style.display='none'"></iframe>
+      </div>
+      
+      <!-- Video 2 -->
+      <div class="video-card">
+        <div class="video-loading">
+          <div class="spinner"></div>
+        </div>
+        <iframe class="video-iframe" 
+                src="https://drive.google.com/file/d/1L_KCF8voe3zeVPQsc_0Wc7HM3Uht5C4M/preview?autoplay=0&controls=1&modestbranding=1&rel=0&enablejsapi=1&playbackQuality=high" 
+                allow="autoplay; fullscreen" 
+                allowfullscreen
+                onload="this.parentNode.querySelector('.video-loading').style.display='none'"></iframe>
+      </div>
+      
+      <!-- Video 3 -->
+      <div class="video-card">
+        <div class="video-loading">
+          <div class="spinner"></div>
+        </div>
+        <iframe class="video-iframe" 
+                src="https://drive.google.com/file/d/1bu9rZ2CJ-HdNO20B52Fyujr7CWeGtZH0/preview?autoplay=0&controls=1&modestbranding=1&rel=0&enablejsapi=1&playbackQuality=high" 
+                allow="autoplay; fullscreen" 
+                allowfullscreen
+                onload="this.parentNode.querySelector('.video-loading').style.display='none'"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Row 2 -->
+  <div class="video-container">
+    <div class="video-scroller">
+      <!-- Video 1 -->
+      <div class="video-card">
+        <div class="video-loading">
+          <div class="spinner"></div>
+        </div>
+        <iframe class="video-iframe" 
+                src="https://drive.google.com/file/d/1rUdqMrGhwzCq-OO02B5VGI4ziea5l2TJ/preview?autoplay=0&controls=1&modestbranding=1&rel=0&enablejsapi=1&playbackQuality=high" 
+                allow="autoplay; fullscreen" 
+                allowfullscreen
+                onload="this.parentNode.querySelector('.video-loading').style.display='none'"></iframe>
+      </div>
+      
+      <!-- Video 2 -->
+      <div class="video-card">
+        <div class="video-loading">
+          <div class="spinner"></div>
+        </div>
+        <iframe class="video-iframe" 
+                src="https://drive.google.com/file/d/1BzsKok2RZ9wkQbQvUWV-AJ79gw27fXaA/preview?autoplay=0&controls=1&modestbranding=1&rel=0&enablejsapi=1&playbackQuality=high" 
+                allow="autoplay; fullscreen" 
+                allowfullscreen
+                onload="this.parentNode.querySelector('.video-loading').style.display='none'"></iframe>
+      </div>
+      
+      <!-- Video 3 -->
+      <div class="video-card">
+        <div class="video-loading">
+          <div class="spinner"></div>
+        </div>
+        <iframe class="video-iframe" 
+                src="https://drive.google.com/file/d/1408CtBLzyaSPWYfv8axmKmcmmsiJIO_y/preview?autoplay=0&controls=1&modestbranding=1&rel=0&enablejsapi=1&playbackQuality=high" 
+                allow="autoplay; fullscreen" 
+                allowfullscreen
+                onload="this.parentNode.querySelector('.video-loading').style.display='none'"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 SRK Institute of Management & Computer Application</p>
+      <p>Contact: <a href="mailto:info@srkinstitute.in">info@srkinstitute.in</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Force high quality playback for all videos
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.video-iframe').forEach(iframe => {
+        try {
+          iframe.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackQuality',
+            args: ['high']
+          }), '*');
+        } catch(e) {}
+      });
+    });
+  </script>
+</body>
+</html>
